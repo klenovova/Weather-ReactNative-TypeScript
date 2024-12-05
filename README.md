@@ -1,50 +1,139 @@
-# Welcome to your Expo app 👋
+# Weather App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern weather application built with Expo and React Native that provides real-time weather information and city search functionality.
 
-## Get started
+## Features
 
-1. Install dependencies
+- City search with autocomplete suggestions
+- Current location weather
+- Detailed weather information including:
+  - Temperature
+  - Feels like temperature
+  - Humidity
+  - Wind speed
+  - Sunrise/Sunset times
+- Hourly forecast
+- Temperature unit switching (Celsius/Fahrenheit)
+- Clean and intuitive UI with smooth animations
 
+## Prerequisites
+
+Before running the application, make sure you have the following installed:
+
+- Node.js (v16 or later)
+- npm (v8 or later)
+- Expo CLI (`npm install -g expo-cli`)
+- iOS Simulator (for iOS development)
+- Android Studio and Android SDK (for Android development)
+- Expo Go app on your physical device (optional)
+
+## Environment Setup
+
+### iOS Development (macOS only)
+1. Install Xcode from the Mac App Store
+2. Install iOS Simulator through Xcode
+
+### Android Development
+1. Install Android Studio
+2. Install Android SDK (minimum SDK version 21)
+3. Configure Android environment variables
+4. Create and configure an Android Virtual Device (AVD)
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd weather-app
+   ```
+
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-2. Start the app
-
+3. Start the development server:
    ```bash
-    npx expo start
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+## Running the App
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+After starting the development server, you have several options to run the app:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Using Expo Go (Easiest)
+1. Install Expo Go on your iOS/Android device
+2. Scan the QR code shown in the terminal with:
+   - iOS: Camera app
+   - Android: Expo Go app
 
-## Get a fresh project
+### Using Simulators
+- iOS (macOS only):
+  ```bash
+  npx expo start --ios
+  ```
+- Android:
+  ```bash
+  npx expo start --android
+  ```
 
-When you're ready, run:
-
+### Development Build
+For a native development build:
 ```bash
-npm run reset-project
+npx expo run:ios
+# or
+npx expo run:android
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Troubleshooting
 
-## Learn more
+Common issues and solutions:
 
-To learn more about developing your project with Expo, look at the following resources:
+1. Metro bundler issues:
+   ```bash
+   npx expo start --clear
+   ```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+2. Dependencies issues:
+   ```bash
+   npm install --force
+   ```
 
-## Join the community
+3. Cache issues:
+   ```bash
+   npx expo start --clear-cache
+   ```
 
-Join our community of developers creating universal apps.
+## Project Structure
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```
+weather-app/
+├── app/                        # Main application screens
+│   └── (tabs)/                # Tab-based navigation screens
+│       ├── index.tsx          # Search screen
+│       ├── weather.tsx        # Weather details screen
+│       ├── settings.tsx       # Settings screen
+│       └── _layout.tsx        # Tab navigation layout
+├── src/
+│   ├── store/                 # Redux store configuration       # Store configuration
+│   ├── utils/                 # Utility functions
+│   └── styles/               # Shared styles
+├── components/               # Reusable components
+│   ├── weather/             # Weather Screen related components
+│   ├── settings/            # Settings Screen related components
+└── assets/                 # Static assets
+└── constants/              # Constants
+```
+
+## Technologies Used
+
+- Expo
+- React Native
+- TypeScript
+- Redux Toolkit
+- Gluestack UI
+- OpenWeatherMap API
+
+
+## Video Demo
+https://mega.nz/file/kRtXBRKQ#N6YMboMuyxIn_vDt3_3rIZFDcBavo1bHq2rbXj0IzeI
